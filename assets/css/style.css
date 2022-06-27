@@ -16401,4 +16401,31 @@ body {
 .clickable{
   cursor: pointer;
 }
+
+html:not([dir=rtl]) .c-callout-info {
+  border-left-color: #39f !important;
+}
+
+html:not([dir=rtl]) .c-callout-danger {
+  border-left-color: #e55353 !important;
+}
+
+html:not([dir=rtl]) .c-callout-warning {
+  border-left-color: #f9b115 !important;
+}
+
+html:not([dir=rtl]) .c-callout-success {
+  border-left-color: #2eb85c !important;
+}
+
+html:not([dir=rtl]) .c-callout {
+  border-left: 4px solid #d8dbe0;
+}
+
+.c-callout {
+  position: relative;
+  padding: 0 1rem;
+  margin: 1rem 0;
+  border-radius: .25rem;
+}
 /*# sourceMappingURL=style.css.map */

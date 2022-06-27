@@ -58,10 +58,11 @@ $route['translate_uri_dashes'] = FALSE;
 
 //CALL LOGS
 $route['call-logs'] = 'Call_logs/index';
-$route['get-equipment-type-library'] = 'libraries/Equipment_type/getAllEquipmentTypeLib';
-$route['save-equipment-type-library'] = 'libraries/Equipment_type/save';
-$route['update-equipment-type-library'] = 'libraries/Equipment_type/update_equipment_type';
-$route['delete-equipment-type-library'] = 'libraries/Equipment_type/delete_equipment_type';
+$route['get-client'] = 'Call_logs/getAllClients';
+$route['save-client'] = 'Call_logs/save';
+$route['update-client'] = 'Call_logs/update_client';
+$route['delete-client'] = 'Call_logs/delete_client';
+$route['get-user-search'] = 'Call_logs/getAllUsers';
 //CALL LOGS
 
 

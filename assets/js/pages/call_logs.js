@@ -5,60 +5,96 @@ var app = new Vue({
   el: '#call_logs',
   data: {
     form: {
-      company_name: '',
+      country: '',
+      city: '',
       web_address: '',
       email_address: '',
-      first_name: '',
-      last_name: '',
-      sole_trader: '',
       address: '',
-      post_code: '',
-      land_line: '',
-      mobile: '',
-      field_of_work: '',
+      phone_number: '',
+      shop_stall: '',
+      watches: '',
+      jewelry: '',
+      jewelry_services: '',
+      watch_repairs: '',
+      polishing: '',
+      casting: '',
+      plating: '',
+      watch_making: '',
+      wholesale: '',
+      retail: '',
+      auction: '',
       notes: '',
     },
     update_data: {
       id: 0,
-      company_name: '',
+      country: '',
+      city: '',
       web_address: '',
       email_address: '',
-      first_name: '',
-      last_name: '',
-      sole_trader: '',
       address: '',
-      post_code: '',
-      land_line: '',
-      mobile: '',
-      field_of_work: '',
+      phone_number: '',
+      shop_stall: '',
+      watches: '',
+      jewelry: '',
+      jewelry_services: '',
+      watch_repairs: '',
+      polishing: '',
+      casting: '',
+      plating: '',
+      watch_making: '',
+      wholesale: '',
+      retail: '',
+      auction: '',
       notes: '',
     },
     delete_data: {
       id: 0,
     },
     search: {
-      equipment_type: '',
-      technician_emp_id: '',
-      date: '',
-      office_id: 0,
-      div_id: 0,
-      sec_id: 0,
-      unit_id: 0
+      country: '',
+      city: '',
+      web_address: '',
+      email_address: '',
+      address: '',
+      phone_number: '',
+      shop_stall: '',
+      watches: '',
+      jewelry: '',
+      jewelry_services: '',
+      watch_repairs: '',
+      polishing: '',
+      casting: '',
+      plating: '',
+      watch_making: '',
+      wholesale: '',
+      retail: '',
+      auction: '',
+      added_by: '',
+      date_added: '',
     },
+    count_calls:0,
     mainTable: {
       columns: [
-        "company_name",
+        "country",
+        "city",
         "web_address",
         "email_address",
-        "persons_name",
-        "sole_trader",
         "address",
-        "post_code",
-        "land_line",
-        "mobile",
-        "field_of_work",
+        "phone_number",
+        "shop_stall",
+        "watches",
+        "jewelry",
+        "jewelry_services",
+        "watch_repairs",
+        "polishing",
+        "casting",
+        "plating",
+        "watch_making",
+        "wholesale",
+        "retail",
+        "auction",
         "notes",
-        "added_by",
+        "username",
         "date_added",
         "action",
       ],
@@ -70,17 +106,8 @@ var app = new Vue({
         perPage: 10,
         params: this.search,
         headings: {
-          equipment_id: "ID",
-          equipment_type: "Equipment Type",
-          technician_emp: "Technician",
-          end_user: "End-User",
-          odsu: "Office",
-          brand_model: "Brand/Model",
-          property_no: "Property Number",
-          serial_number: "Serial Number",
-          date_created: "Date Created",
+          username: "Added by",
           action: "Action",
-          date_created: "Date Added",
         },
         sortable: ["equipment_id", "equipment_type_id", "technician_emp_id"],
         filterable: true,
@@ -111,29 +138,52 @@ var app = new Vue({
           if (typeof app != "undefined") {
             data.search = app.search
           }
-          var url = window.App.baseUrl + "get-preventive-maintenance";
-          return axios
+          var url = window.App.baseUrl + "get-client";
+          let data_call =  axios
             .get(url, {
               params: data
             })
             .catch(function (e) {
               console.log(e);
             });
+
+            data_call.then(function (e) {
+              app.count_calls = e.data.count;
+            })
+
+            return data_call 
         },
       },
 
     },
     loading: false,
+    users: [],
   },
   created() {},
   mounted() {
 
     $('.modal').on('hidden.bs.modal', function () {
       app.resetFields();
-    })
+    });
+
+    this.getUsers();
 
   },
   methods: {
+    getUsers: function () {
+      this.loading = true;
+      var data = frmdata(this.update_data);
+      var urls = window.App.baseUrl + "get-user-search";
+      axios.post(urls, data)
+        .then(function (e) {
+          app.users = e.data.data;
+          refreshpicker();
+         
+        })
+        .catch(function (error) {
+          console.log(error)
+        });
+    },
     filterSearch() {
 
       app.$refs.main_table.getData()
@@ -141,7 +191,7 @@ var app = new Vue({
     save: function () {
       this.loading = true;
       var data = frmdata(this.form);
-      var urls = window.App.baseUrl + "save-preventive-maintenance";
+      var urls = window.App.baseUrl + "save-client";
       axios.post(urls, data)
         .then(function (e) {
 
@@ -150,7 +200,7 @@ var app = new Vue({
               icon: 'success',
               title: e.data.message
             })
-            $('#addEquipmentModal').modal('hide')
+            $('#addCallLogModal').modal('hide')
             app.$refs.main_table.refresh();
             app.resetFields();
           }
@@ -165,23 +215,35 @@ var app = new Vue({
           console.log(error)
         });
     },
-    updateEquipment: function (data) {
-      this.update_data.equipment_id = data.equipment_id;
-      this.update_data.equipment_type_id = data.equipment_type_id;
-      this.update_data.technician_emp_id = data.technician_emp_id;
-      this.update_data.technician = data.technician;
-      this.update_data.emp_id = data.emp_id;
-      this.update_data.property_no = data.property_no;
-      this.update_data.brand_model = data.brand_model;
-      this.update_data.serial_number = data.serial_number;
+    updateClient: function (data) {
+      this.update_data.id = data.id;
+      this.update_data.country = data.country;
+      this.update_data.city = data.city;
+      this.update_data.web_address = data.web_address;
+      this.update_data.email_address = data.email_address;
+      this.update_data.address = data.address;
+      this.update_data.phone_number = data.phone_number;
+      this.update_data.shop_stall = data.shop_stall;
+      this.update_data.watches = data.watches;
+      this.update_data.jewelry = data.jewelry;
+      this.update_data.jewelry_services = data.jewelry_services;
+      this.update_data.watch_repairs = data.watch_repairs;
+      this.update_data.polishing = data.polishing;
+      this.update_data.casting = data.casting;
+      this.update_data.plating = data.plating;
+      this.update_data.watch_making = data.watch_making;
+      this.update_data.wholesale = data.wholesale;
+      this.update_data.retail = data.retail;
+      this.update_data.auction = data.auction;
+      this.update_data.notes = data.notes;
     },
-    deleteEquipment: function (data) {
-      this.delete_data.equipment_id = data.equipment_id;
+    deleteClient: function (data) {
+      this.delete_data.id = data.id;
     },
-    update_equipment_form: function () {
+    update_client_form: function () {
       this.loading = true;
       var data = frmdata(this.update_data);
-      var urls = window.App.baseUrl + "update-preventive-maintenance";
+      var urls = window.App.baseUrl + "update-client";
       axios.post(urls, data)
         .then(function (e) {
 
@@ -190,7 +252,7 @@ var app = new Vue({
               icon: 'success',
               title: e.data.message
             })
-            $('#updateEquipmentModal').modal('hide')
+            $('#updateClientModal').modal('hide')
             app.$refs.main_table.refresh();
           }
           else {
@@ -203,10 +265,10 @@ var app = new Vue({
           console.log(error)
         });
     },
-    delete_equipment_form: function () {
+    delete_client_form: function () {
       this.loading = true;
       var data = frmdata(this.delete_data);
-      var urls = window.App.baseUrl + "delete-preventive-maintenance";
+      var urls = window.App.baseUrl + "delete-client";
       axios.post(urls, data)
         .then(function (e) {
 
@@ -215,7 +277,7 @@ var app = new Vue({
               icon: 'success',
               title: e.data.message
             })
-            $('#deleteEquipmentModal').modal('hide')
+            $('#deleteClientModal').modal('hide')
             app.$refs.main_table.refresh();
           }
           else {
@@ -231,20 +293,50 @@ var app = new Vue({
         });
     },
     resetFields() {
-      this.form.company_name = '';
+      this.form.country = '';
+      this.form.city = '';
       this.form.web_address = '';
       this.form.email_address = '';
-      this.form.first_name = '';
-      this.form.last_name = '';
-      this.form.sole_trader = '';
       this.form.address = '';
-      this.form.post_code = '';
-      this.form.land_line = '';
-      this.form.mobile = '';
-      this.form.field_of_work = '';
+      this.form.phone_number = '';
+      this.form.shop_stall = '';
+      this.form.watches = '';
+      this.form.jewelry = '';
+      this.form.jewelry_services = '';
+      this.form.watch_repairs = '';
+      this.form.polishing = '';
+      this.form.casting = '';
+      this.form.plating = '';
+      this.form.watch_making = '';
+      this.form.wholesale = '';
+      this.form.retail = '';
+      this.form.auction = '';
       this.form.notes = '';
-      this.form.added_by = '';
-      this.form.date_added = '';
+      refreshpicker();
+    },
+    refresh() {
+      this.search =  {
+        country: '',
+        city: '',
+        web_address: '',
+        email_address: '',
+        address: '',
+        phone_number: '',
+        shop_stall: '',
+        watches: '',
+        jewelry: '',
+        jewelry_services: '',
+        watch_repairs: '',
+        polishing: '',
+        casting: '',
+        plating: '',
+        watch_making: '',
+        wholesale: '',
+        retail: '',
+        auction: '',
+        added_by: '',
+        date_added: '',
+      };
       refreshpicker();
     },
 

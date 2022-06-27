@@ -22,6 +22,13 @@ Class Users_model extends CI_Model {
 			}
 		}
 
+		if (!empty($limit)) {
+            if (!empty($offset)) {
+              $offset = $offset;
+            }
+            $this->db->limit($limit, $offset);
+          }
+
 	 	if (!empty($like)) {
             if (is_array($like['column'])) {
                 foreach ($like['column'] as $lk => $lv) {
