@@ -1,0 +1,456 @@
+/*LOGIN*/
+body{
+	background: #ecedf0 !important;
+}
+
+#login-welcome-page .card{
+	border: none;
+	margin-top: 5%;
+	background-color: transparent !important;
+
+}
+
+#login-welcome-page .container{
+	position: absolute;
+    left: 0;
+    right: 0;
+}
+
+#login-welcome-page .card-header,
+#login-welcome-page .card-body,
+#login-welcome-page .card-footer {
+	background-color: rgba(0,0,0,0.5) !important;	
+}
+
+#login-welcome-page .card-header h3{
+	text-align: center;
+}
+
+
+
+#sac-logo{
+	width: 90%;
+    margin: 15px;
+}
+	
+/* GENERAL */
+
+.modal-content .modal-header{
+	position: relative;
+}
+
+.modal-content .modal-header .close{
+	position: absolute;
+}
+
+.modal-content .modal-header .modal-title{
+	margin: 0 auto;
+}
+
+.modal-form-view .modal-dialog{
+	margin-right: 15px;
+	margin-left: 15px;	
+	max-width: initial;
+}
+
+.vertical_align_middle{
+	vertical-align: middle !important;
+}
+
+.card-header .fa{
+	margin-right: 5px;
+}
+
+.VuePagination nav{
+	margin: 0 auto !important;
+}
+
+/* Button */
+.btn-group{
+	width: 100px;
+    margin: 0 auto;
+    display: flex;
+}
+
+.btn-group .btn-pill{
+	border-radius: 10px;
+}
+
+.btn-info{
+	color: #ffffff;
+}
+
+.btn-info.disabled,
+.btn-info:disabled{
+	color: #ffffff;
+}
+
+.dropdown-menu .dropdown-item:hover{
+	cursor: pointer !important;
+}
+
+.btn-info:hover{
+	color: #ffffff;	
+}
+
+.btn-light{
+	background-color: #fff;
+	color: #5c6873;
+}
+
+.btn-light:hover{
+	background-color: #fff;
+}
+
+.bootstrap-select.is-invalid .dropdown-toggle{
+	border-color: #f86c6b !important;
+}
+
+.approval-grp-btn{
+	position: fixed;
+	top: 70px;
+	right: 80px;
+}
+/*Checkbox*/
+
+.custom-checkbox-50{
+	display: inline-block; 
+	width: 49%;
+}
+
+.custom-checkbox div {
+  clear: both;
+  overflow: hidden;
+}
+
+#ppmp_page .custom-checkbox div{
+	display: inline-block !important;
+	width: 49% !important;
+}
+
+#ppmp_page .custom-checkbox input[type="radio"]:hover:not(:checked) ~ label:before,
+#ppmp_page .custom-checkbox input[type="checkbox"]:hover:not(:checked) ~ label:before,
+#category_page .custom-checkbox input[type="radio"]:hover:not(:checked) ~ label:before,
+#category_page .custom-checkbox input[type="checkbox"]:hover:not(:checked) ~ label:before,
+#uom_page .custom-checkbox input[type="radio"]:hover:not(:checked) ~ label:before,
+#uom_page .custom-checkbox input[type="checkbox"]:hover:not(:checked) ~ label:before
+#uacs_page .custom-checkbox input[type="radio"]:hover:not(:checked) ~ label:before,
+#uacs_page .custom-checkbox input[type="checkbox"]:hover:not(:checked) ~ label:before {
+	text-indent: 9px;
+}
+
+#aoq_details_page .custom-checkbox div,
+#rfq_page .custom-checkbox div {
+	display: inline-block;
+	width: 32.333333%;
+}
+
+.custom-checkbox label {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid #D1D3D4;
+  font-weight: normal;
+}
+
+#aoq_details_page .custom-checkbox label {
+	font-size: 12px;
+}
+
+#aoq_details_page .custom-checkbox input[type="radio"]:hover:not(:checked) ~ label:before,
+#aoq_details_page .custom-checkbox input[type="checkbox"]:hover:not(:checked) ~ label:before {
+	text-indent: 0em;
+}
+
+
+#aoq_details_page .custom-checkbox input[type="radio"]:checked ~ label:before,
+#aoq_details_page .custom-checkbox input[type="checkbox"]:checked ~ label:before {
+	text-indent: 0em;
+}	
+
+
+.custom-checkbox input[type="radio"]:empty,
+.custom-checkbox input[type="checkbox"]:empty {
+  display: none;
+}
+
+.custom-checkbox input[type="radio"]:empty ~ label,
+.custom-checkbox input[type="checkbox"]:empty ~ label {
+  position: relative;
+  line-height: 2.5em;
+  text-indent: 3.25em;  
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.custom-checkbox input[type="radio"]:empty ~ label:before,
+.custom-checkbox input[type="checkbox"]:empty ~ label:before {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 2.5em;
+  background: #D1D3D4;
+  border-radius: 3px 0 0 3px;
+}
+
+.custom-checkbox input[type="radio"]:hover:not(:checked) ~ label,
+.custom-checkbox input[type="checkbox"]:hover:not(:checked) ~ label {
+  /*font-weight: bold;*/
+}
+
+.custom-checkbox input[type="radio"]:hover:not(:checked) ~ label:before,
+.custom-checkbox input[type="checkbox"]:hover:not(:checked) ~ label:before {
+  content: '\2714';
+  text-indent: .9px;
+  font-weight: bold;
+  background: #337ab7;
+}
+
+.custom-checkbox input[type="radio"]:checked ~ label,
+.custom-checkbox input[type="checkbox"]:checked ~ label {
+  color: #777;
+}
+
+.custom-checkbox input[type="radio"]:checked ~ label:before,
+.custom-checkbox input[type="checkbox"]:checked ~ label:before {
+  content: '\2714';
+  text-indent: 9px;
+  color: #333;
+  background-color: #ccc;
+}
+
+.custom-checkbox input[type="radio"]:focus ~ label:before,
+.custom-checkbox input[type="checkbox"]:focus ~ label:before {
+  box-shadow: 0 0 0 3px #999;
+}
+
+.custom-checkbox-default input[type="radio"]:checked ~ label:before,
+.custom-checkbox-default input[type="checkbox"]:checked ~ label:before {
+  color: #333;
+  background-color: #ccc;
+}
+
+.custom-checkbox-primary input[type="radio"]:checked ~ label:before,
+.custom-checkbox-primary input[type="checkbox"]:checked ~ label:before {
+  color: #fff;
+  background-color: #337ab7;
+}
+
+
+/*.btn{
+	color: #ffffff;
+}
+
+
+
+
+
+.btn-warning:hover{
+	color: #ffffff;	
+}
+
+.btn-default{
+	color: #000000 !important;
+}
+
+table .btn-label i,
+.dropdown-menu .btn-label i{
+	color: #000000 !important;
+}
+
+.btn-label i{
+	color: #ffffff !important;
+	margin-right: 5px;
+}*/
+
+
+/*PAP DETAILS*/
+.milestone {
+    padding: 5px;
+}
+
+.milestone.is-invalid{	
+	border: 1px solid #f86c6b;
+	border-radius: 5px;
+}
+
+.invalid-milestone-feedback{
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 80%;
+    color: #f86c6b;
+}
+
+.pap-lvl-1{
+	background: #37759c;
+	color: #ffffff;
+}
+
+.pap-lvl-2{
+	background: #265C7E;
+	color: #ffffff;
+}
+
+.pap-lvl-3{
+	background: #4B9ABB;	
+	color: #ffffff;
+}
+
+.pap-lvl-4{
+	background: #4BB7BA;	
+	color: #ffffff;
+}
+
+.pap-lvl-5{
+	background: #e0f3ff;
+}
+
+.pap-footer{
+	background: #033246;
+	color: #ffffff;
+}
+
+#pap_page .table thead{
+	background: #1b3c50;
+	color: #ffffff;
+}
+
+#pap_page .table thead th{
+	border: 2px solid #c8ced3 !important;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#pap_page .table tbody td{
+	vertical-align: middle;
+}
+
+/*APP DETAILS*/
+
+#ppmp_table thead th{
+	border: 2px solid #c8ced3 !important;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#ppmp_table thead{
+	background: #1b3c50;
+	color: #ffffff;
+}
+
+#ppmp_table thead th{
+	border: 2px solid #c8ced3 !important;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#ppmp_table tbody td{
+	vertical-align: middle;
+}
+
+
+/*GENERATED FILES*/
+#generated_files_page .nav-tabs .nav-item{
+	width: 10%;
+    text-align: center;
+}
+
+/*PR*/
+#pr_page .btn-group{
+	width: 150px !important;
+}
+
+#editPrModal label,
+#approvePrModal label,
+#rfq_page .modal label{
+	font-weight: bold;
+	text-align: right;
+}
+
+/*RFQ*/
+#rfq_page .btn-group {
+    width: 280px !important;
+}
+
+/*AOQ*/
+.card-content{
+	margin-top: 15px;
+}
+
+.bidder-item{
+	transition: 300ms all;
+}
+
+.bidder-item:hover{
+	color: #fff;
+	cursor: pointer;	
+	transition: 300ms all;
+}
+
+.winner-item{
+	color: #fff;
+	background: #4dbd74;
+}
+
+/*BAC RESO*/
+.bacDetailsHeader{
+	top: -12px;
+	position: relative;	
+	transition: 100 all;
+
+}
+
+.bacDetailsHeader button,
+.bacDetailsHeader .fa{		
+	transition: 100 all;
+	background: transparent;
+	border: transparent;	
+	color: #fff;
+}
+
+.btn-warning{
+	transition: 100 all;
+	color: #000 !important; 
+	background-color: #ffc107 !important;
+    border-color: #ffc107 !important;
+}
+
+/*.btn-danger {
+    color: #fff !important; 
+    background-color: #f86c6b !important;
+    border-color: #f86c6b !important;
+}
+*/
+
+
+
+/*SAC*/
+
+#swal2-title{
+	display: initial !important;
+}
+
+.swal2-title .error{
+	display: block;
+	width: 100%;
+	text-align: left;
+	margin-bottom: 5px;
+}
+
+.modal-dialog label{
+    /*line-height: 28px;*/
+}
+
+
+.is-invalid{
+	color: #f86c6b;
+}
+
+.is-invalid .custom-control-label::before{
+	border: #f86c6b solid 1px;
+}
