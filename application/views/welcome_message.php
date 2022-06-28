@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <meta charset="utf-8">
   <!-- <meta name="description" content="Find a Builder offers professional plumbers, builders, electricians, carpenters and every other type of building specialist to the home improver and small developer." /> -->
-  <meta name="author" content="Find A Diamond">
+  <meta name="author" content="Find A Jewelry">
 
-  <meta name="keywords" content="Find A Diamond" />
+  <meta name="keywords" content="Find A Jewelry" />
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <!-- <meta name="description" content="Find a Builder offers professional plumbers, builders, electricians, carpenters and every other type of building specialist to the home improver and small developer." /> -->
   <meta name="language" content="en" />
-  <title>Find a Diamond</title>
+  <title>Find a Jewelry</title>
   <link rel="shortcut icon" href="<?= base_url(); ?>assets/img/favicon.ico" />
 
   <!-- Icons-->
@@ -46,7 +46,7 @@
                 <div id="login" class="card-body text-center">
                     <!-- <img class="mb-4" style="width:45%" src="<?=base_url();?>assets/img/logo.png"> -->
                     <div style="color: rgb(2 63 136); margin: 50px 0px;">
-                        <h1 style="font-weight: 900">FIND A DIAMOND</h1>
+                        <h1 style="font-weight: 900">FIND A JEWELRY</h1>
                     </div>
                     <h4 class="text-center">Sign In</h4>
                     <form @submit.prevent="checklogin">

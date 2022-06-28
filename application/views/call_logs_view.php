@@ -5,10 +5,10 @@
         <div class="card">
           <div class="card-header">
             <h3 style="display: inline-block;" class="card-title"><?= $template['title'] ?> Table</h3>
-              <button style="float: right;" type="button" class="btn btn-primary ml-1" data-toggle="modal" data-target="#addCallLogModal"><i class="fa fa-plus"></i> Add Call Log</button>
+              <button style="float: right;" type="button" class="btn btn-primary ml-1" data-toggle="modal" data-target="#addCallLogModal"><i class="fa fa-plus"></i> Add Jewelry</button>
           </div>
           <div class="card-body">
-            <div class="c-callout c-callout-danger"><small class="">Total Calls </small>
+            <div class="c-callout c-callout-danger"><small class="">Total Jewelries</small>
                 <div class="text-value-lg">{{count_calls}}</div>
             </div>
             <!-- <div class="row" style="margin-bottom: 15px;">
@@ -138,7 +138,7 @@
         <form v-on:submit.prevent="save">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Add Call Log</h5>
+                    <h5 class="modal-title">Add Jewelry</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -254,7 +254,7 @@
       <form v-on:submit.prevent="update_client_form">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Update Client</h5>
+            <h5 class="modal-title">Update Jewelry</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>

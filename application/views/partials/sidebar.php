@@ -2,8 +2,8 @@
 	<ul class="nav">
 		<li class="nav-item">
 			<a class="nav-link" href="<?= base_url("call-logs") ?>">
-				<i class="nav-icon icon-phone"></i>
-				Call/Client Lists
+				<i class="nav-icon icon-diamond"></i>
+				Jewelry List
 			</a>
 		</li>
 		<?php if(sesdata('access') == 1): ?>

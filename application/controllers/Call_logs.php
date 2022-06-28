@@ -101,7 +101,7 @@ class Call_logs extends CI_Controller
   public function index()
   {
 
-    $this->template->title('Call Logs');
+    $this->template->title('Jewelry');
     $this->template->set_layout('default');
     $this->template->set_partial('header', 'partials/header');
     $this->template->set_partial('sidebar', 'partials/sidebar');

@@ -4,7 +4,7 @@
   </button>
   <a class="navbar-brand" href="#">
     <!-- <img style="width:55%" src="<?=base_url();?>assets/img/logo.png"> -->
-    <h5>FIND A DIAMOND</h5>
+    <h5>FIND A JEWELRY</h5>
   
   </a>
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show">

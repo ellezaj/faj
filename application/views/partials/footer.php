@@ -1,7 +1,7 @@
 <footer class="app-footer">
   <div>
     <a href="#"></a>
-    <span>&copy; 2022 Find a Diamond Ltd. All Rights Reserved.</span>
+    <span>&copy; 2022 Find a Jewelry Ltd. All Rights Reserved.</span>
   </div>
   <div class="ml-auto"><!-- 
     <span>Powered by</span>
