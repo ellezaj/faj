@@ -11,7 +11,7 @@
             <div class="c-callout c-callout-danger"><small class="">Total Jewelries</small>
                 <div class="text-value-lg">{{count_calls}}</div>
             </div>
-            <!-- <div class="row" style="margin-bottom: 15px;">
+            <div class="row" style="margin-bottom: 15px;">
               <div class="col-md-12">
                 <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                   <i class="fa fa-search"></i> Advance Search
@@ -22,8 +22,12 @@
 
               <div class="row">
                 <div class="col-md-3 form-group">
-                  <label class="font-weight-bold">Company Name</label>
-                  <input type="text" class="form-control" v-model="search.company_name">
+                  <label class="font-weight-bold">Country</label>
+                  <input type="text" class="form-control" v-model="search.country">
+                </div>
+                <div class="col-md-3 form-group">
+                  <label class="font-weight-bold">City</label>
+                  <input type="text" class="form-control" v-model="search.city">
                 </div>
                 <div class="col-md-3 form-group">
                   <label class="font-weight-bold">Web Address</label>
@@ -33,34 +37,42 @@
                   <label class="font-weight-bold">Email Address</label>
                   <input type="text" class="form-control" v-model="search.email_address">
                 </div>
-                <div class="col-md-3 form-group">
-                  <label class="font-weight-bold">Person's Name</label>
-                  <input type="text" class="form-control" v-model="search.persons_name">
-                </div>
               </div>
               <div class="row">
                 <div class="col-md-3 form-group">
-                  <label class="font-weight-bold">Sole Trader or Limited Company</label>
+                  <label class="font-weight-bold">Address</label>
+                  <input type="text" class="form-control" v-model="search.address">
+                </div>
+                <div class="col-md-3 form-group">
+                  <label class="font-weight-bold">Phone number</label>
                   <input type="text" class="form-control form-control-sm" v-model="search.sole_trader">
                 </div>
                 <div class="col-md-3 form-group">
-                  <label class="font-weight-bold">Post Code & Address</label>
-                  <input type="text" class="form-control form-control-sm" v-model="search.address">
+                  <label class="font-weight-bold">Shop/Stall/Dealer</label>
+                  <select class="form-control" v-model="search.shop_stall">
+                    <option value="shop">Shop</option>
+                    <option value="stall">Stall</option>
+                    <option value="dealer">Dealer</option>
+                  </select>
                 </div>
                 <div class="col-md-3 form-group">
-                  <label class="font-weight-bold">Landline</label>
-                  <input type="text" class="form-control form-control-sm" v-model="search.land_line">
-                </div>
-                <div class="col-md-3 form-group">
-                  <label class="font-weight-bold">Mobile</label>
-                  <input type="text" class="form-control form-control-sm" v-model="search.mobile">
+                  <label class="font-weight-bold">Category</label>
+                  <select class="selectpicker form-control" v-model="search.category" multiple>
+                    <option value="watches">Watches</option>
+                    <option value="jewelry">Jewelry</option>
+                    <option value="jewelry_services">Jewelry Services</option>
+                    <option value="watch_repairs">Watch Repairs</option>
+                    <option value="polishing">Polishing</option>
+                    <option value="casting">Casting</option>
+                    <option value="plating">Plating</option>
+                    <option value="watch_making">Watch Making</option>
+                    <option value="wholesale">Wholesale</option>
+                    <option value="retail">Retail</option>
+                    <option value="auction">Auction</option>
+                  </select>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-3 form-group">
-                  <label class="font-weight-bold">Field of Work</label>
-                  <input type="text" class="form-control form-control-sm" v-model="search.field_of_work">
-                </div>
                 <div class="col-md-3 form-group">
                   <label class="font-weight-bold">Added by</label>
                   <select id="obsu_select" class="selectpicker form-control" data-live-search="true" v-model="search.added_by">
@@ -72,15 +84,14 @@
                   <label class="font-weight-bold">Date Added</label>
                   <input type="date" class="form-control" v-model="search.date_added">
                 </div>
-              </div>
-             
-              <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-6 form-group">
+                  <label class="font-weight-bold">&nbsp;</label>
+                  <br>
                   <button class="btn btn-primary" @click="filterSearch">Search</button>
                   <button class="btn btn-warning" @click="refresh()">Reset Filter</button>
                 </div>
               </div>
-            </div> -->
+            </div>
 
             <v-server-table :columns="mainTable.columns" :options="mainTable.options" id="v-ref-code-table" ref="main_table">
             
@@ -176,14 +187,22 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label class="font-weight-bold">Phone Number</label>
-                                <input type="text" class="form-control form-control-sm" v-model="form.phone_number">
+                                <label class="font-weight-bold">Address</label>
+                                <input type="text" class="form-control form-control-sm" v-model="form.address">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
+                                <label class="font-weight-bold">Phone Number</label>
+                                <input type="text" class="form-control form-control-sm" v-model="form.phone_number">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
                                 <label class="font-weight-bold">Shop/Stall/Dealer</label>
-                                <select class="form-control">
+                                <select class="form-control" v-model="form.shop_stall">
                                   <option value="shop">Shop</option>
                                   <option value="stall">Stall</option>
                                   <option value="dealer">Dealer</option>
@@ -292,14 +311,22 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
-                        <label class="font-weight-bold">Phone Number</label>
-                        <input type="text" class="form-control form-control-sm" v-model="update_data.phone_number">
+                        <label class="font-weight-bold">Address</label>
+                        <input type="text" class="form-control form-control-sm" v-model="update_data.address">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
+                        <label class="font-weight-bold">Phone Number</label>
+                        <input type="text" class="form-control form-control-sm" v-model="update_data.phone_number">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
                         <label class="font-weight-bold">Shop/Stall/Dealer</label>
-                        <select class="form-control">
+                        <select class="form-control" v-model="update_data.shop_stall">
                           <option value="shop">Shop</option>
                           <option value="stall">Stall</option>
                           <option value="dealer">Dealer</option>

@@ -51,8 +51,11 @@ class Call_logs extends CI_Controller
     $like_or = [];
     $condition['deleted'] = 0;
 
-    if (!empty($search['company_name'])) {
-      $like['company_name'] = $search['company_name'];
+    if (!empty($search['country'])) {
+      $like['country'] = $search['country'];
+    }
+    if (!empty($search['city'])) {
+      $like['city'] = $search['city'];
     }
     if (!empty($search['web_address'])) {
       $like['web_address'] = $search['web_address'];
@@ -60,24 +63,19 @@ class Call_logs extends CI_Controller
     if (!empty($search['email_address'])) {
       $like['email_address'] = $search['email_address'];
     }
-    if (!empty($search['persons_name'])) {
-      $like_or['last_name'] = $search['persons_name'];
-      $like_or['first_name'] = $search['persons_name'];
-    }
-    if (!empty($search['sole_trader'])) {
-      $like['sole_trader'] = $search['sole_trader'];
-    }
     if (!empty($search['address'])) {
       $like['address'] = $search['address'];
     }
-    if (!empty($search['land_line'])) {
-      $like['land_line'] = $search['land_line'];
+    if (!empty($search['phone_number'])) {
+      $like['phone_number'] = $search['phone_number'];
     }
-    if (!empty($search['mobile'])) {
-      $like['mobile'] = $search['mobile'];
+    if (!empty($search['shop_stall'])) {
+      $like['shop_stall'] = $search['shop_stall'];
     }
-    if (!empty($search['field_of_work'])) {
-      $like['field_of_work'] = $search['field_of_work'];
+    if (!empty($search['category'])) {
+      foreach ($search['category'] as $key => $value) {
+        $condition[$value] = 1;
+      }
     }
     if (!empty($search['added_by'])) {
       $condition['added_by'] = $search['added_by'];
