@@ -127,6 +127,7 @@ class Call_logs extends CI_Controller
         $date = date("Y-m-d H:i:s");
     
         $insdata = [
+          "name_of_shop"  => $name_of_shop,
           "country"  => $country,
           "city"   => $city,
           "web_address"  => $web_address,
@@ -176,6 +177,7 @@ class Call_logs extends CI_Controller
     //validation
     if($msg == ""){
       $update_data = [
+        "name_of_shop"  => $name_of_shop,
         "country"  => $country,
         "city"   => $city,
         "web_address"  => $web_address,

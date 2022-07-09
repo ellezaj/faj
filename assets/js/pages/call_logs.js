@@ -5,6 +5,7 @@ var app = new Vue({
   el: '#call_logs',
   data: {
     form: {
+      name_of_shop:'',
       country: '',
       city: '',
       web_address: '',
@@ -27,6 +28,7 @@ var app = new Vue({
     },
     update_data: {
       id: 0,
+      name_of_shop:'',
       country: '',
       city: '',
       web_address: '',
@@ -67,6 +69,7 @@ var app = new Vue({
       columns: [
         "country",
         "city",
+        "name_of_shop",
         "web_address",
         "email_address",
         "address",
@@ -209,6 +212,7 @@ var app = new Vue({
     updateClient: function (data) {
       this.update_data.id = data.id;
       this.update_data.country = data.country;
+      this.update_data.name_of_shop = data.name_of_shop;
       this.update_data.city = data.city;
       this.update_data.web_address = data.web_address;
       this.update_data.email_address = data.email_address;
@@ -284,6 +288,7 @@ var app = new Vue({
         });
     },
     resetFields() {
+      this.form.name_of_shop = '';
       this.form.country = '';
       this.form.city = '';
       this.form.web_address = '';

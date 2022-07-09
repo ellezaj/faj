@@ -209,6 +209,13 @@
                                 </select>
                             </div>
                         </div>
+
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="font-weight-bold">Name of Shop</label>
+                                <input type="text" class="form-control form-control-sm" v-model="form.name_of_shop">
+                            </div>
+                        </div>
                     </div>
                     <table class="table table-bordered table-sm" id="call_table">
                       <tr>
@@ -331,6 +338,12 @@
                           <option value="stall">Stall</option>
                           <option value="dealer">Dealer</option>
                         </select>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="font-weight-bold">Name of Shop</label>
+                        <input type="text" class="form-control form-control-sm" v-model="update_data.name_of_shop">
                     </div>
                 </div>
             </div>
