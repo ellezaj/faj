@@ -130,7 +130,7 @@
               </template>
 
               <template slot="action" slot-scope="props">
-                <template v-if="parseInt(props.row.added_by) == <?=sesdata('user_id')?>">
+                <template v-if="parseInt(props.row.added_by) == <?=sesdata('user_id')?> || <?=sesdata('access')?> == 1">
                   <button type="button" class="btn btn-warning btn-sm" @click="updateClient(props.row)" data-toggle="modal" data-target="#updateClientModal"><i class="fa fa-edit"></i></button>
                   <button type="button" class="btn btn-danger btn-sm" @click="deleteClient(props.row)" data-toggle="modal" data-target="#deleteClientModal"><i class="fa fa-trash"></i></button>
                 </template>
